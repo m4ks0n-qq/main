@@ -16,16 +16,17 @@
             height: 100%;
             overflow: hidden;
         }
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-image: url('1.gif'); /* Добавляем фон GIF */
-            background-size: cover; /* Растягиваем фон */
-            background-position: center; /* Центрируем фон */
-            background-repeat: no-repeat; /* Запрещаем повторение фона */
-        }
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('1.gif'); /* Добавляем фон GIF */
+    background-size: cover; /* Растягиваем фон */
+    background-position: center; /* Центрируем фон */
+    background-repeat: no-repeat; /* Запрещаем повторение фона */
+    min-height: 100vh; /* Убедитесь, что body занимает всю высоту окна */
+}
 .container {
     text-align: center;
     padding-top: 20px; /* Заменяем margin-top на padding-top */
