@@ -26,14 +26,17 @@
             background-position: center; /* Центрируем фон */
             background-repeat: no-repeat; /* Запрещаем повторение фона */
         }
-        .container {
-            text-align: center;
-            margin-top: 20px;
+	.container {
+	    text-align: center;
+	    margin-top: 20px;
 	    flex-grow: 1; /* Контейнер занимает всю доступную высоту */
 	    display: flex;
-    	    flex-direction: column;
-    	    justify-content: center;
-    	    align-items: center;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	    padding-bottom: 40px; /* Добавляем отступ снизу */
+	}
+
 
         }
         *, *::before, *::after {
@@ -220,20 +223,22 @@
             box-shadow: 0 3px #d35400, 0 -3px #f6d365 inset; /* Сжатие при нажатии */
             transform: translateY(2px);
         }
-        .return-button {
-            font-size: 14.4px;
-            font-weight: bold;
-            padding: 10.8px 0; /* Уменьшение padding справа и слева */
-            width: 150px; /* Увеличение ширины для центрирования текста */
-            border-radius: 22.5px;
-            background: linear-gradient(145deg, #f6d365 0%, #fda085 100%);
-            box-shadow: 0 5.4px #d35400, 0 -5.4px #f6d365 inset;
-            color: white;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-top: 18px; /* Отступ сверху для разделения кнопок */
-            font-family: 'Intro', Arial, sans-serif;
-            text-align: center; /* Центрирование текста */
+	.return-button {
+	    font-size: 14.4px;
+	    font-weight: bold;
+	    padding: 10.8px 0; /* Уменьшение padding справа и слева */
+	    width: 150px; /* Увеличение ширины для центрирования текста */
+	    border-radius: 22.5px;
+	    background: linear-gradient(145deg, #f6d365 0%, #fda085 100%);
+	    box-shadow: 0 5.4px #d35400, 0 -5.4px #f6d365 inset;
+	    color: white;
+	    cursor: pointer;
+	    transition: all 0.2s ease;
+	    margin-top: 18px; /* Отступ сверху для разделения кнопок */
+	    margin-bottom: 40px; /* Добавляем отступ снизу */
+	    font-family: 'Intro', Arial, sans-serif;
+	    text-align: center; /* Центрирование текста */
+	}
         }
         .return-button:hover {
             background: linear-gradient(145deg, #fda085 0%, #f6d365 100%);
