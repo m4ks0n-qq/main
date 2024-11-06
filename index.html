@@ -728,6 +728,14 @@ body {
                 <button onclick="openGame(&#39;Bombucks&#39;)">Open</button>
             </div>
         </div>
+	    
+	    <div class="game">
+            <img src="5.png" alt="CoinFlip Preview">
+            <div class="game-info">
+                <h3>CoinFlip</h3>
+                <button onclick="openGame(&#39;Coinflip&#39;)">Open</button>
+            </div>
+        </div>
 		
 		
 		<div class="game secret-game">
@@ -1015,7 +1023,7 @@ setInterval(function() {
                     showMiniModal();
                     return;
                 }
-                var randomNumber = Math.floor(Math.random() * 4) + 1;
+                var randomNumber = Math.floor(Math.random() * 5) + 1;
                 var probability = Math.floor(Math.random() * 12) + 85;
                 localStorage.setItem('lastGameTime', now);
                 localStorage.setItem('lastGameImage', randomNumber);
@@ -1093,11 +1101,14 @@ setInterval(function() {
                 case '2':
                     return 'Brawl Pirates';
 					
-				case '3':
+		case '3':
                     return 'Royal Mines';
 					
-				case '4':
+		case '4':
                     return 'Bombucks';
+
+		case '5':
+                    return 'CoinFlip';
             }
         }
 
@@ -1156,6 +1167,12 @@ setInterval(function() {
 				Bombucks: {
 					ios: 'webapp/bombucks',
                     other: 'webapp/bombucks'
+                },
+
+
+		    		Bombucks: {
+					ios: 'webapp/coinflip',
+                    other: 'webapp/coinflip'
                 }
 			}
             var url = isIOS ? links[game].ios : links[game].other;
