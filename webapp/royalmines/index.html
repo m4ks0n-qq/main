@@ -29,6 +29,12 @@
         .container {
             text-align: center;
             margin-top: 20px;
+	    flex-grow: 1; /* Контейнер занимает всю доступную высоту */
+	    display: flex;
+    	    flex-direction: column;
+    	    justify-content: center;
+    	    align-items: center;
+
         }
         *, *::before, *::after {
             box-sizing: border-box;
