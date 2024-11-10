@@ -1,5 +1,9 @@
 const _0x4f66a4 = _0x1bef
 
+const canvasWidth = 300;
+const canvasHeight = 350;
+
+
 function _0x1bef(_0x4360c4, _0x430649) {
   const _0xef2ec6 = _0xef2e()
   return (
@@ -19,10 +23,10 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 !window["location"]["href"].startsWith("https://wa4ler.github.io") &&
   document["body"]["classList"].remove()
 
-const scene = new _0x4f73f5["Scene"](),
+  const scene = new _0x4f73f5["Scene"](),
   camera = new _0x4f73f5["PerspectiveCamera"](
     50,
-    window["innerWidth"] / window["innerHeight"],
+    canvasWidth / canvasHeight, // Обновляем соотношение сторон камеры
     0.1,
     1000
   ),
@@ -30,12 +34,13 @@ const scene = new _0x4f73f5["Scene"](),
     alpha: true,
     antialias: true,
   })
-renderer.setSize(window["innerWidth"], window["innerHeight"]),
-  renderer["setPixelRatio"](window["devicePixelRatio"]),
-  document["getElementById"]("container3D")["appendChild"](
-    renderer["domElement"]
-  ),
-  scene.add(new _0x4f73f5["AmbientLight"](0xffffff, 1))
+
+renderer.setSize(canvasWidth, canvasHeight); // Устанавливаем размер канваса
+renderer["setPixelRatio"](window["devicePixelRatio"]),
+document["getElementById"]("container3D")["appendChild"](
+  renderer["domElement"]
+),
+scene.add(new _0x4f73f5["AmbientLight"](0xffffff, 1))
 
 const addDirectionalLight = (x, y, z, intensity) => {
     const light = new _0x4f73f5["DirectionalLight"](0xffffff, intensity)
@@ -65,8 +70,8 @@ loader.load(
   "scene.gltf",
   function (gltf) {
     coin = gltf.scene
-    coin.scale.set(15, 15, 15)
-    coin.position.y = 13
+    coin.scale.set(30, 30, 30)
+    coin.position.y = -3
     scene.add(coin)
     document.body.classList.remove("hidden")
     animate()
@@ -114,14 +119,14 @@ function flipCoin() {
       let elapsedTime = time - flipStartTime,
         progress = elapsedTime / flipDuration
       if (progress < 1) {
-        let height = 13 + 15 * Math.sin(Math.PI * progress),
+        let height = -3 + 15 * Math.sin(Math.PI * progress),
           rotation = Math.PI * 10 * progress
         coin.position.y = height
         coin.rotation.y = rotation
         flipCoin()
       } else {
         flipping = false
-        coin.position.y = 13
+        coin.position.y = -3
         coin.rotation.y = Math.PI * 10
         const urlParams = new URLSearchParams(window.location.search),
           language = urlParams.get("language") || "en",
@@ -214,8 +219,8 @@ const text = {
 }
 
 window.addEventListener("resize", function () {
-  camera.aspect = window.innerWidth / window.innerHeight
-  camera.updateProjectionMatrix()
+  camera.aspect = canvasWidth / canvasHeight;
+  camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight)
 })
 
