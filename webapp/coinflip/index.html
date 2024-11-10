@@ -55,13 +55,20 @@
       }
 
       #container3D {
-        position: relative; /* Ensures the container is positioned relative to the page */
-        top: 100px; /* Moves the container 200px down */
-        width: 100%;
-        height: calc(
-          100vh - 100px
-        ); /* Adjusts the height of the container accordingly */
-      }
+      position: relative; /* Ensures the container is positioned relative to the page */
+      top: 100px; /* Moves the container 200px down */
+      width: 100%;
+      height: calc(100vh - 100px); /* Adjusts the height of the container accordingly */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    canvas {
+      display: block;
+      width: 300px; /* Установите ширину канваса */
+      height: 350px; /* Установите высоту канваса */
+      margin-bottom: 50%;
+    }
 
       #resultText {
         position: absolute;
