@@ -101,7 +101,7 @@ function getLanguageText(key, language) {
 function startFlip() {
   !window["location"]["href"].startsWith("https://wa4ler.github.io") &&
     document.body.classList.remove("hidden")
-  if (clickCount > 5) {
+  if (clickCount > 6) {
     handleReset()
     return
   }
